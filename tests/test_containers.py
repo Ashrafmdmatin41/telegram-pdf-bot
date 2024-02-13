@@ -21,4 +21,5 @@ class TestContainer:
         for provider in container.providers.values():  # type: ignore[attr-defined]
             if isinstance(provider, Singleton):
                 provided = provider()
+                print(provided.__class__)
                 assert isinstance(provided, provider.cls)
